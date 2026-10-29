@@ -1,0 +1,119 @@
+[
+  {
+    "name": "get_positions",
+    "description": "Track where a satellite is right now (or in the next few seconds): get its live latitude, longitude, altitude, and look-angles (azimuth/elevation) from an observer on Earth. Use this to answer \"where is the ISS right now?\" (NORAD id 25544) or to locate any satellite by NORAD id. Example: get_positions({ norad_id: 25544, lat: 40.71, lon: -74.0 }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "norad_id": {
+          "type": "number",
+          "description": "NORAD catalog id of the satellite, e.g. 25544 for the ISS, 20580 for Hubble."
+        },
+        "lat": {
+          "type": "number",
+          "description": "Observer latitude in decimal degrees."
+        },
+        "lon": {
+          "type": "number",
+          "description": "Observer longitude in decimal degrees."
+        },
+        "altitude": {
+          "type": "number",
+          "description": "Observer altitude in meters above sea level (default 0)."
+        },
+        "seconds": {
+          "type": "number",
+          "description": "Number of future seconds of positions to predict (default 2, max 300)."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Optional — your own N2YO API key for higher limits; omit to use the shared Pipeworx key."
+        }
+      },
+      "required": [
+        "norad_id",
+        "lat",
+        "lon"
+      ]
+    }
+  },
+  {
+    "name": "get_visual_passes",
+    "description": "Find when a satellite will be visible to the naked eye overhead from an observer location (visual passes = bright, sunlit passes against a dark sky). Returns start/max/end times, elevation, azimuths, brightness magnitude, and duration. Use this for \"when can I see the ISS pass over?\" Example: get_visual_passes({ norad_id: 25544, lat: 40.71, lon: -74.0 }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "norad_id": {
+          "type": "number",
+          "description": "NORAD catalog id of the satellite, e.g. 25544 for the ISS."
+        },
+        "lat": {
+          "type": "number",
+          "description": "Observer latitude in decimal degrees."
+        },
+        "lon": {
+          "type": "number",
+          "description": "Observer longitude in decimal degrees."
+        },
+        "altitude": {
+          "type": "number",
+          "description": "Observer altitude in meters above sea level (default 0)."
+        },
+        "days": {
+          "type": "number",
+          "description": "Number of days ahead to search for passes (default 5, max 10)."
+        },
+        "min_visibility": {
+          "type": "number",
+          "description": "Minimum visible duration in seconds for a pass to be returned (default 300)."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Optional — your own N2YO API key for higher limits; omit to use the shared Pipeworx key."
+        }
+      },
+      "required": [
+        "norad_id",
+        "lat",
+        "lon"
+      ]
+    }
+  },
+  {
+    "name": "whats_above",
+    "description": "List what satellites are currently above a location on Earth, within a given radius of the observer's zenith. Use this to answer \"what satellites are overhead right now?\" Optionally filter by category (e.g. 52 = Starlink, 18 = amateur radio, 1 = brightest). Example: whats_above({ lat: 40.71, lon: -74.0 }).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "lat": {
+          "type": "number",
+          "description": "Observer latitude in decimal degrees."
+        },
+        "lon": {
+          "type": "number",
+          "description": "Observer longitude in decimal degrees."
+        },
+        "altitude": {
+          "type": "number",
+          "description": "Observer altitude in meters above sea level (default 0)."
+        },
+        "radius": {
+          "type": "number",
+          "description": "Search radius in degrees from the observer zenith (default 70, max 90)."
+        },
+        "category": {
+          "type": "number",
+          "description": "N2YO category filter: 0 = all (default), 18 = amateur radio, 52 = Starlink, 1 = brightest."
+        },
+        "_apiKey": {
+          "type": "string",
+          "description": "Optional — your own N2YO API key for higher limits; omit to use the shared Pipeworx key."
+        }
+      },
+      "required": [
+        "lat",
+        "lon"
+      ]
+    }
+  }
+]
