@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-n2yo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "N2YO MCP — wraps the N2YO Satellite Tracking REST API (n2yo.com)",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "n2yo",
     "gatewaySlug": "n2yo",
-    "sourceHash": "v1-85c715fb6d168842d1aa357416d9e8526f9040930b5f6d91dffac22c9bf8f8b0",
-    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
+    "sourceHash": "v1-0b1759ccc0b14d73d84509f8a45b15357460c749a38960d6647ae933fd1d3e00",
+    "sourceCommit": "56cf550e46fed96c0101a3877ccaf8357eecf016"
   }
 }
