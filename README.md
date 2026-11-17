@@ -1,8 +1,8 @@
 # mcp-n2yo
 
-N2YO MCP — wraps the N2YO Satellite Tracking REST API (n2yo.com)
+Unofficial N2YO MCP — wraps the N2YO Satellite Tracking REST API (n2yo.com)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1865+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2007+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
@@ -56,7 +56,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1865+ data sources. The
+Both URLs reach the same gateway and the same 2007+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 
